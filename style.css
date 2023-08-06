@@ -372,6 +372,7 @@ label {
     left: -9rem;
     z-index: 2;
     font-size: 3.5vw;
+    text-transform: uppercase;
   }
   .expiry-date {
     position: absolute;
@@ -383,7 +384,7 @@ label {
 
   .card-cvv {
     position: absolute;
-    top: -0.45rem;
+    top: -0.4rem;
     left: 10rem;
     z-index: 2;
     font-size: 3.5vw;
