@@ -368,15 +368,15 @@ label {
 
   .card-name {
     position: absolute;
-    top: 10.5rem;
+    top: 10rem;
     left: -9rem;
     z-index: 2;
     font-size: 3.5vw;
   }
   .expiry-date {
     position: absolute;
-    top: 10.5rem;
-    left: 6.5rem;
+    top: 10rem;
+    left: 6rem;
     z-index: 2;
     font-size: 3.5vw;
   }
