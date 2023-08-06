@@ -368,22 +368,22 @@ label {
 
   .card-name {
     position: absolute;
-    top: 11rem;
+    top: 10.5rem;
     left: -9rem;
     z-index: 2;
     font-size: 3.5vw;
   }
   .expiry-date {
     position: absolute;
-    top: 11rem;
-    left: 7rem;
+    top: 10.5rem;
+    left: 6.5rem;
     z-index: 2;
     font-size: 3.5vw;
   }
 
   .card-cvv {
     position: absolute;
-    top: -0.5rem;
+    top: -0.45rem;
     left: 10rem;
     z-index: 2;
     font-size: 3.5vw;
@@ -411,7 +411,10 @@ label {
 
   .dateCvvError {
     display: flex;
-    gap: 12rem;
+  }
+
+  .date-error{
+    margin-right: 120px;
   }
 }
 
