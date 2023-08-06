@@ -1,0 +1,419 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+} */
+/*
+    2. Remove default margin
+  */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+/* body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+} */
+/*
+    5. Improve media defaults
+  */
+/* img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+} */
+/*
+    6. Remove built-in form typography styles
+  */
+/* input,
+button,
+textarea,
+select {
+  font: inherit;
+} */
+/*
+    7. Avoid text overflows
+  */
+/* p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+} */
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+:root {
+  /* Primary */
+  --red-input-errors: hsl(0, 100%, 66%);
+  --input-active-border: hsl(278, 94%, 30%);
+
+  /* Neutral */
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+
+  /* font-family */
+  --ff-base: Space Grotesk;
+
+  --ff-regular: 500;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+}
+.container {
+  display: flex;
+  gap: 25rem;
+  align-items: center;
+}
+
+.left-section {
+  min-height: 100vh;
+  width: 30%;
+  background-image: url(images/bg-main-desktop.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.cards {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.front-card {
+  position: relative;
+  transform: translate(-100px);
+}
+
+.logo {
+  position: absolute;
+  top: 2rem;
+  left: -4rem;
+}
+
+.card-number {
+  color: var(--White);
+  letter-spacing: 2.5px;
+  position: absolute;
+  top: 9rem;
+  left: -4rem;
+  font-size: 1.8rem;
+}
+
+.card-info {
+  color: var(--White);
+}
+
+.card-name {
+  position: absolute;
+  top: 12.5rem;
+  left: -4rem;
+}
+
+.expiry-date {
+  position: absolute;
+  top: 12.5rem;
+  left: 17rem;
+}
+
+.card-cvv {
+  color: var(--White);
+  letter-spacing: 2px;
+  position: absolute;
+  left: 22rem;
+  top: 24.5rem;
+}
+
+.form {
+  width: 70%;
+}
+
+.form,
+.cardHolderName,
+.cardHolderNumber {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cardHolderName,
+.cardHolderNumber {
+  width: 100%;
+}
+
+label {
+  text-transform: uppercase;
+  color: var(--Very-dark-violet);
+  font-size: 14px;
+}
+
+.cardHolderName input,
+.cardHolderNumber input {
+  border-radius: 10px;
+  padding: 0.8rem 0.8rem;
+  font-size: 18px;
+  width: 80%;
+  border: 1px solid var(--Light-grayish-violet);
+}
+
+.cardHolderName input:focus,
+.cardHolderNumber input:focus,
+.month:focus,
+.year:focus,
+.cvv:focus {
+  border-color: var(--input-active-border);
+  outline: var(--input-active-border);
+}
+
+.dateCvv {
+  display: flex;
+  gap: 3rem;
+}
+
+.dateCvvInput {
+  width: 100%;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.dateFlex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.month,
+.year {
+  border-radius: 10px;
+  font-size: 18px;
+  width: 15%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--Light-grayish-violet);
+}
+
+.cvv {
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 0.7rem 0.9rem;
+  width: 47%;
+  margin-left: 1%;
+  border: 1px solid var(--Light-grayish-violet);
+}
+
+.button {
+  background-color: var(--Very-dark-violet);
+  color: var(--Light-grayish-violet);
+  padding: 0.8rem 0.8rem;
+  width: 80%;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.dateCvvError {
+  display: flex;
+  gap: 4rem;
+}
+.name-error,
+.number-error,
+.date-error,
+.cvv-error {
+  color: var(--red-input-errors);
+  font-size: 14px;
+  visibility: visible;
+}
+
+.hidden {
+  display: none;
+}
+
+.login-success {
+  width: 400px;
+}
+
+.center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.thankYou {
+  text-transform: uppercase;
+  color: var(--Very-dark-violet);
+  font-size: 28px;
+  font-weight: var(--ff-regular);
+  letter-spacing: 2.5px;
+}
+
+.added {
+  color: var(--Dark-grayish-violet);
+  font-size: 18px;
+}
+
+.continue {
+  background-color: var(--Very-dark-violet);
+  color: var(--Light-grayish-violet);
+  padding: 0.8rem 0.8rem;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 6.5rem;
+    align-items: center;
+  }
+
+  .left-section {
+    min-height: 40vh;
+    width: 100%;
+    background-image: url(images/bg-main-mobile.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+  }
+
+  .front-card {
+    width: 98%;
+    position: absolute;
+    right: 20%;
+    top: 25%;
+    z-index: 1;
+  }
+
+  .back-card {
+    width: 95%;
+    position: absolute;
+    top: -230%;
+    right: 30%;
+  }
+
+  .form {
+    width: 100%;
+    align-items: center;
+  }
+
+  .cardHolderName input,
+  .cardHolderNumber input {
+    width: 100%;
+  }
+
+  .cardHolderName,
+  .cardHolderNumber {
+    width: 80%;
+  }
+  .logo {
+    position: absolute;
+    top: 2.5rem;
+    left: -9rem;
+    width: 20%;
+    z-index: 2;
+  }
+  .card-number {
+    position: absolute;
+    top: 7rem;
+    left: -9rem;
+    font-size: 5vw;
+    z-index: 2;
+  }
+
+  .card-name {
+    position: absolute;
+    top: 11rem;
+    left: -9rem;
+    z-index: 2;
+    font-size: 3.5vw;
+  }
+  .expiry-date {
+    position: absolute;
+    top: 11rem;
+    left: 7rem;
+    z-index: 2;
+    font-size: 3.5vw;
+  }
+
+  .card-cvv {
+    position: absolute;
+    top: -0.5rem;
+    left: 10rem;
+    z-index: 2;
+    font-size: 3.5vw;
+  }
+
+  .dateCvvCont {
+    width: 80%;
+    align-items: center;
+  }
+  .dateCvv {
+    display: flex;
+    gap: 12%;
+  }
+  .month,
+  .year {
+    width: 20%;
+  }
+  .cvv {
+    width: 55%;
+    margin-left: 1.5%;
+  }
+  .login-success {
+    width: 100%;
+  }
+
+  .dateCvvError {
+    display: flex;
+    gap: 12rem;
+  }
+}
+
+
+
